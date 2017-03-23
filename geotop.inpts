@@ -1,0 +1,131 @@
+!*******************************
+!******* CONFIGURATION *********
+!*******************************
+TimeStepEnergyAndWater = 1800
+InitDateDDMMYYYYhhmm=01/01/2010 12:00
+EndDateDDMMYYYYhhmm=05/01/2010 12:00
+EnergyBalance = 1
+WaterBalance  = 1
+PointSim      = 1
+
+!*******************************
+!********* GEOGRAPHY ***********
+!*******************************
+Latitude= 0.0
+Longitude= 0.0
+StandardTimeSimulation=+0
+
+!*******************************
+!******** METEO DATA ***********
+!*******************************
+NumberOfMeteoStation=1
+MeteoStationCoordinateX=609501
+MeteoStationCoordinateY=7648992
+MeteoStationLatitude=0.0
+MeteoStationLongitude=0.0
+MeteoStationElevation=0.0
+MeteoStationStandardTime=+0
+MeteoStationWindVelocitySensorHeight=10
+MeteoStationTemperatureSensorHeight=2
+
+MeteoFile = "meteo/meteoNoRain"
+
+HeaderDateDDMMYYYYhhmmMeteo = "POSIX"
+HeaderIPrec                 = "Iprec"
+HeaderWindVelocity          = "WindSp"
+HeaderRH                    = "RH"
+HeaderAirTemp               = "AirT"
+HeaderSWglobal              = "Swglob"
+HeaderCloudSWTransmissivity = "CloudTrans"
+
+!********************************************
+!***************** PRECIP *******************
+!********************************************
+
+SnowCorrFactor=1.0
+RainCorrFactor=1.0
+
+!********************************************
+!****** INIT AND BOUNDARY CONDITIONS ********
+!********************************************
+
+InitSoilTemp=20.0
+InitSoilTempBedrock=20.0
+ZeroTempAmplitDepth=20000.0
+ZeroTempAmplitTemp=20.0
+
+InitSoilPressure=0.0
+FreeDrainageAtLateralBorder = 0
+FreeDrainageAtBottom        = 0
+
+!************************************
+!******* POINTS OF INTEREST *********
+!************************************
+PointFile               = "listpoints"
+HeaderPointID           = "ID"
+HeaderCoordinatePointX  = "xcoord"
+HeaderCoordinatePointY  = "ycoord"
+HeaderPointElevation    = "zcoord"
+HeaderPointLandCoverType= "landcover"
+HeaderPointSoilType     = "soiltype"
+HeaderPointSlope        = "slope"
+HeaderPointAspect       = "aspect"
+HeaderPointSkyViewFactor= "sky"
+HeaderPointBedrockDepth = "bedrock"
+
+!*******************************
+!******** LAND COVER  **********
+!*******************************
+NumLandCoverTypes=1
+PointLandCoverType=1
+CanopyFraction=0.0
+
+!*******************************
+!***** ALBEDO & EMISSIVITY *****
+!*******************************
+
+
+!*******************************
+!*******  SOIL TYPE ************
+!*******************************
+SoilParFile = "soil/soil"
+
+SoilLayerNumber = 50
+SoilLayerTypes = 1
+PointSoilType = 1
+
+HeaderSoilDz = "Dz"
+HeaderLateralHydrConductivity = "Kh"
+HeaderNormalHydrConductivity = "Kv"
+HeaderThetaRes = "vwc_r"
+HeaderFieldCapacity = "vwc_fc"
+HeaderThetaSat = "vwc_s"
+HeaderAlpha = "VG_alpha"
+HeaderN = "VG_n"
+
+!*******************************
+!******* NUMERICS **********
+!*******************************
+
+
+!*************************************
+!******* OUTPUT TIME SERIES **********
+!*************************************
+! point file
+DtPlotPoint = 0.5
+PointOutputFile="output-tabs/point"
+PointAll=1
+!DatePoint=1
+
+! profiles
+SoilAll=1
+
+SoilAveragedTempProfileFile="output-tabs/soiltemp"
+SoilAveragedIceContentProfileFile="output-tabs/thetaice"
+SoilAveragedLiqContentProfileFile="output-tabs/thetaliq"
+!SoilLiqWaterPressProfileFile="output-tabs/psiliq"
+!SoilTotWaterPressProfileFile="output-tabs/psitot"
+
+! discharge
+DtPlotDischarge=0.5
+DischargeFile="output-tabs/discharge"

@@ -28,7 +28,7 @@ MeteoStationStandardTime=+0
 MeteoStationWindVelocitySensorHeight=10
 MeteoStationTemperatureSensorHeight=2
 
-MeteoFile = "meteo/meteoNoRain"
+MeteoFile = "meteo/meteo"
 
 HeaderDateDDMMYYYYhhmmMeteo = "POSIX"
 HeaderIPrec                 = "Iprec"
